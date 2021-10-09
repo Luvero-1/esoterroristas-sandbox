@@ -1,0 +1,55 @@
+{
+  "name": "esoterroristas-sandbox",
+  "title": "Esoterroristas 2ºed para Sandbox",
+  "description": "<div style=\"text-align: center;\" data-css=\"tve-u-171dca46144\"><em>Sois la &uacute;ltima l&iacute;nea de defensa de nuestro mundo, un equipo de &eacute;lite que investiga y combate las conspiraciones esoterroristas que pretenden desgarrar el tejido de la realidad y dejar entrar a los monstruos que existen m&aacute;s all&aacute; del velo.</em></div>\n<div style=\"text-align: center;\" data-css=\"tve-u-171dca46144\">&nbsp;</div>\n<div style=\"text-align: center;\" data-css=\"tve-u-171dca46144\"><em>Llevas una doble vida. La mayor&iacute;a de las veces, eres una persona corriente que paga su alquiler y llevas una vida de lo m&aacute;s normal. Sin embargo, perteneces a la organizaci&oacute;n mundial secreta llamada Ordo Veritatis. Esta conspiraci&oacute;n ben&eacute;vola, que opera con la aprobaci&oacute;n t&aacute;cita de las principales potencias mundiales, lucha contra las maquinaciones de los esoterroristas, quienes buscan conseguir poder provocando fen&oacute;menos paranormales malignos.</em></div>",
+  "author": "Luvero",
+  "authors": [
+    {
+      "name": "Luvero",
+      "discord": "Luvero#5745"
+    }
+  ],
+  "url": "https://github.com/Luvero-1/esoterroristas-sandbox",
+  "flags": {},
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.8.6",
+  "compatibleCoreVersion": "0.8.9",
+  "scripts": [],
+  "esmodules": [],
+  "styles": [],
+  "languages": [],
+  "packs": [
+    {
+      "label": "Armas",
+      "entity": "Item",
+      "name": "armas",
+      "path": "packs/armas.db",
+      "system": "sandbox",
+      "package": "world",
+      "absPath": "C:\\Users\\Usuario\\AppData\\Local\\FoundryVTT\\Data\\worlds\\esoterroristas-sandbox\\packs\\armas.db",
+      "private": false
+    },
+    {
+      "label": "Protecciones",
+      "entity": "Item",
+      "name": "protecciones",
+      "path": "packs/protecciones.db",
+      "system": "sandbox",
+      "package": "world",
+      "absPath": "C:\\Users\\Usuario\\AppData\\Local\\FoundryVTT\\Data\\worlds\\esoterroristas-sandbox\\packs\\protecciones.db",
+      "private": false
+    }
+  ],
+  "system": "sandbox",
+  "dependencies": [],
+  "socket": false,
+  "manifest": "https://raw.githubusercontent.com/Luvero-1/esoterroristas-sandbox/main/world.json",
+  "download": "https://codeload.github.com/Luvero-1/esoterroristas-sandbox/zip/main",
+  "protected": false,
+  "background": "worlds/esoterroristas-sandbox/maxresdefault.jpg",
+  "coreVersion": "0.8.9",
+  "nextSession": null,
+  "resetKeys": false,
+  "safeMode": false,
+  "systemVersion": "0.10.1"
+}

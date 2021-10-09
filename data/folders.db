@@ -1,0 +1,21 @@
+{"name":"De habilidades técnicas","type":"Item","sort":4100000,"flags":{},"parent":"YrMQ7D9ZzcCnmNvs","sorting":"a","color":"","_id":"4aGBNSq8ybZExyqc"}
+{"name":"De umbral y salud","type":"Item","sort":4300000,"flags":{},"parent":"YrMQ7D9ZzcCnmNvs","sorting":"a","color":"","_id":"A5E9kZubHFspLNBb"}
+{"name":"De Salud / Estabilidad","type":"Item","sort":3500000,"flags":{},"parent":"YrMQ7D9ZzcCnmNvs","sorting":"a","color":"","_id":"Ha377I0H62FC24zl"}
+{"name":"De habilidades interpersonales","type":"Item","sort":4000000,"flags":{},"parent":"YrMQ7D9ZzcCnmNvs","sorting":"a","color":"","_id":"JbjR24w23xtFxhAd"}
+{"name":"1 - Pestañas","type":"Item","sort":2900000,"flags":{},"parent":"dzwUkWXBOiauUdBe","sorting":"a","color":"","_id":"OXSIWCFAPSbTpvbn"}
+{"name":"Armas","type":"Item","sort":4600000,"flags":{},"parent":"hIvBcf0CoNlCW5TN","sorting":"a","color":"","_id":"PJMNN6Lg2T09QYZk"}
+{"name":"Anexo para plantilla PNJs","type":"Item","sort":4800000,"flags":{},"parent":"dzwUkWXBOiauUdBe","sorting":"a","color":"","_id":"Sk1S0FDJnocbk9HD"}
+{"name":"De informacion basica","type":"Item","sort":3400000,"flags":{},"parent":"YrMQ7D9ZzcCnmNvs","sorting":"a","color":"","_id":"V6ms8DGugYTFdnzo"}
+{"name":"Protecciones","type":"Item","sort":4700000,"flags":{},"parent":"hIvBcf0CoNlCW5TN","sorting":"a","color":"","_id":"WPD4bO58X2gewCYE"}
+{"name":"3 - Propiedades","type":"Item","sort":3100000,"flags":{},"parent":"dzwUkWXBOiauUdBe","sorting":"a","color":"","_id":"YrMQ7D9ZzcCnmNvs"}
+{"name":"De habilidades generales","type":"Item","sort":3800000,"flags":{},"parent":"YrMQ7D9ZzcCnmNvs","sorting":"a","color":"","_id":"ZeJyRknIgmv3la1t"}
+{"name":"De Informacion basica","type":"Item","sort":3600000,"flags":{},"parent":"z4r0HpgNINOKMsg8","sorting":"a","color":"","_id":"cQC3jFexYER8gihE"}
+{"_id":"dzwUkWXBOiauUdBe","name":"Config plantilla Esoterroristas (NO TOCAR)","type":"Item","sort":100000,"flags":{},"parent":null,"sorting":"a","color":""}
+{"name":"5 - cItems","type":"Item","sort":3300000,"flags":{},"parent":"dzwUkWXBOiauUdBe","sorting":"a","color":"","_id":"hIvBcf0CoNlCW5TN"}
+{"name":"De Habilidades","type":"Item","sort":3700000,"flags":{},"parent":"z4r0HpgNINOKMsg8","sorting":"a","color":"","_id":"jjwPWlPJjAsG6syM"}
+{"name":"De Combate","type":"Item","sort":4400000,"flags":{},"parent":"z4r0HpgNINOKMsg8","sorting":"a","color":"","_id":"mFbzD8lKGjhHxPY2"}
+{"_id":"mL2k2JAWzHU6cDTg","name":"De cItems de combate","type":"Item","sort":4500000,"flags":{},"parent":"YrMQ7D9ZzcCnmNvs","sorting":"a","color":""}
+{"_id":"rC8asx4IvmJoTcRn","name":"Plantilla fichas (NO TOCAR)","type":"Actor","sort":0,"flags":{},"parent":null,"sorting":"a","color":"#ff0000"}
+{"name":"4 - Tablas y grupos","type":"Item","sort":3200000,"flags":{},"parent":"dzwUkWXBOiauUdBe","sorting":"a","color":"","_id":"v98BzecjW1xyjns3"}
+{"name":"De habilidades academicas","type":"Item","sort":3900000,"flags":{},"parent":"YrMQ7D9ZzcCnmNvs","sorting":"a","color":"","_id":"xSDXXYfy5CzoRRZM"}
+{"name":"2 - Paneles","type":"Item","sort":3000000,"flags":{},"parent":"dzwUkWXBOiauUdBe","sorting":"a","color":"","_id":"z4r0HpgNINOKMsg8"}
