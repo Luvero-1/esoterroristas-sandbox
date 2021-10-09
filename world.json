@@ -18,28 +18,7 @@
   "esmodules": [],
   "styles": [],
   "languages": [],
-  "packs": [
-    {
-      "label": "Armas",
-      "entity": "Item",
-      "name": "armas",
-      "path": "packs/armas.db",
-      "system": "sandbox",
-      "package": "world",
-      "absPath": "C:\\Users\\Usuario\\AppData\\Local\\FoundryVTT\\Data\\worlds\\esoterroristas-sandbox\\packs\\armas.db",
-      "private": false
-    },
-    {
-      "label": "Protecciones",
-      "entity": "Item",
-      "name": "protecciones",
-      "path": "packs/protecciones.db",
-      "system": "sandbox",
-      "package": "world",
-      "absPath": "C:\\Users\\Usuario\\AppData\\Local\\FoundryVTT\\Data\\worlds\\esoterroristas-sandbox\\packs\\protecciones.db",
-      "private": false
-    }
-  ],
+  "packs": [],
   "system": "sandbox",
   "dependencies": [],
   "socket": false,
