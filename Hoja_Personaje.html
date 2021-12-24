@@ -1,0 +1,162 @@
+<form class="{{cssClass}}" autocomplete="off" id="sheet">
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100">
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"></h1>
+            <div class="flexblock-left ">
+                <div class="col-1-2">
+                    {{#if actor.data.istemplate}}
+                    {{else}}
+                    <div class="flexblock-left">
+                        <label class="label-free boldtext">MOD</label>
+                        <input class="input-min" type="text" name="data.mod" value="{{data.mod}}">
+
+                        {{#advShow}}
+                        <a class="roll-mode boldtext" title="Roll mode"><i>{{data.rollmode}}</i></a>
+                        {{/advShow}}
+
+                        {{#showRoller}}
+                        <a class="roll-free" title="Roll mode"><i class="fas fa-dice-d20"></i></a>
+                        {{/showRoller}}
+
+                        {{#if actor.data.selector}}
+                        <a class="mod-selector" title="Select Options"><i class="fas fa-exclamation-circle fa-2x"></i></a>
+                        {{/if}}
+                    </div>
+                    {{/if}}
+                </div>
+
+                <div class="rightblock">
+                    {{#if actor.data.istemplate}}
+                    {{else}}
+                    {{#isGM}}
+                    <select class="selectsheet" name="data.gtemplate" data-type="String">
+                        <!--
+{{#select actor.data.gtemplate}}
+{{#each data.sheets as |gtemplate id|}}
+<option  value="{{gtemplate}}">{{gtemplate}}</option>
+{{/each}}
+{{/select}}
+-->
+                    </select>
+                    {{/isGM}}
+                    {{/if}}
+                    {{#isGM}}
+
+
+                    <h3 class="rightblock-element">Template</h3>
+                    <input class="check-istemplate" name="data.istemplate" id="check-istemplate" type="checkbox" {{checked actor.data.istemplate}}="">
+
+
+                    {{/isGM}}
+
+                    {{#if actor.data.istemplate}}
+                    <h3 class="rightblock-element-tag">Rebuild Sheet</h3>
+                    <a class="rightblock-element item-refresh" title="Rebuild Sheet"><i class="fas fa-sync"></i></a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <div class="atabs">
+        <a class="tab-prev" id="tab-prev">❮</a>
+        <nav class="sheet-tabs tabs" data-group="primary" id="tabs" tabs="2">
+
+            <a class="item tab-button" data-tab="description" id="tab-0">Bio</a>          
+            <a class="item tab-button" id="tab-1" data-tab="tabHab">Habilidades</a><a class="item tab-button" id="tab-2" data-tab="tab_HABILIDADES_2">habilidades 2</a><a style="display: none" id="tab-last"></a>
+            {{#isGM}}
+            <a class="item tab-button" data-tab="citems" id="tab-citems">cItems</a>
+            {{#if actor.data.istemplate}}
+            <a class="item tab-button" data-tab="token" id="tab-token">Token</a>
+            <a class="item tab-button" data-tab="config" id="tab-tabs">Tabs</a>
+            {{/if}}
+            {{/isGM}}
+
+        </nav>
+        <a class="tab-next" id="tab-next">❯</a>
+    </div>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body" id="sheet-body">
+
+        {{!-- Biography Tab --}}
+        <div class="tab biography active scrollable" data-group="primary" data-tab="description">
+            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+        </div>
+
+        {{#if actor.data.istemplate}}
+        {{!-- SheetTabs Tab --}}
+        <div class="tab properties" data-group="primary" data-tab="config">
+            <ol class="properties-list">
+                {{#each data.tabs as |tab id|}}
+                <li class="property flexrow" data-item-id="{{id}}">
+                    <h4 class="property-name">{{tab.name}}</h4>
+                    <div class="property-row">
+                        <a class="property-controls item-top" title="Top Item"><i class="fas fa-arrow-alt-circle-up"></i></a>
+                        <a class="property-controls item-bottom" title="Bottom Item"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                        <a class="property-control item-edit" title="Edit Tab"><i class="fas fa-edit"></i></a>
+                        <a class="property-control item-delete" title="Delete Tab"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+        {{!-- Token Tab --}}
+        <div class="tab token scrollable" data-group="primary" data-tab="token">
+            <div class="flexblock">
+                <div class="col-1-2">
+                    <div class="new-row">
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">Bar 1</label>
+                            <input class="token-bar1" type="text" name="data.tokenbar1" value="{{data.tokenbar1}}" tkvalue="">
+                        </div>
+                    </div>
+                    <div class="new-row">
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">Shield Stat</label>
+                            <input class="token-shieldstat" type="text" name="data.shieldstat" value="{{data.shieldstat}}" tkvalue="">
+                        </div>
+                    </div>
+                    <div class="new-row">
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">Display Name</label>
+                            <select class="token-displayName" name="data.displayName" data-type="String" tkvalue="NONE">
+                                {{#select actor.data.displayName}}
+                                <option value="NONE">NONE</option>
+                                <option value="CONTROL">CONTROL</option>
+                                <option value="OWNER_HOVER">OWNER HOVER</option>
+                                <option value="HOVER">HOVER</option>
+                                <option value="OWNER">OWNER</option>
+                                <option value="ALWAYS">ALWAYS</option>
+                                {{/select}}
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {{/if}}
+
+        {{!-- cItems Tab --}}
+        <div class="tab citems scrollable" data-group="primary" data-tab="citems">
+            <ol class="properties-list">
+                {{#each data.citems as |citem cid|}}
+                <li class="property flexrow" data-item-id="{{cid}}">
+                    <h4 class="property-name">{{citem.name}}</h4>
+                    <div class="property-row">
+                        <a class="property-control citem-edit" title="Edit cItem"><i class="fas fa-edit"></i></a>
+                        <a class="property-control citem-delete" citemid="{{citem.id}}" title="Delete cItem"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+
+
+
+    <div class="tab scrollable tabHab_tab" id="tabHab_Def" data-group="primary" data-tab="tabHab"><div class="new-column" id="tabHabBody"><div class="new-block" id="tabHabrow0"><div class="col-1-1"><div class="panelheader">Habilidades Generales</div><div class="new-row"><div class="flexblock-left"><input name="data.attributes.p_puntos.value" value="{{data.attributes.p_puntos.value}}" type="text" class="input-min p_puntos" attid="jdNBnZ6dG81if3am"></div></div></div></div><div class="new-block" id="tabHabrow1"><div class="col-1-3"><div class="panelheader">Habilidades Académicas</div><div class="new-row"><div class="flexblock-center"><h3 class=" label-free" id="pha_antro" attid="JrvTUDW4rt7i6Lux">Antropología</h3><input name="data.attributes.pha_antro.value" value="{{data.attributes.pha_antro.value}}" type="text" class="input-ahalf  pha_antro" attid="JrvTUDW4rt7i6Lux"><input type="text" class="input-bhalf input-disabled inputGM pha_antro.max" name="data.attributes.pha_antro.max" value="{{data.attributes.pha_antro.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_arqueo" attid="ME495Kevq2PFZsAQ">Arqueología</h3><input name="data.attributes.pha_arqueo.value" value="{{data.attributes.pha_arqueo.value}}" type="text" class="input-ahalf  pha_arqueo" attid="ME495Kevq2PFZsAQ"><input type="text" class="input-bhalf input-disabled inputGM pha_arqueo.max" name="data.attributes.pha_arqueo.max" value="{{data.attributes.pha_arqueo.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_arquit" attid="XboFstj5qKlU8cB7">Arquitectura</h3><input name="data.attributes.pha_arquit.value" value="{{data.attributes.pha_arquit.value}}" type="text" class="input-ahalf  pha_arquit" attid="XboFstj5qKlU8cB7"><input type="text" class="input-bhalf input-disabled inputGM pha_arquit.max" name="data.attributes.pha_arquit.max" value="{{data.attributes.pha_arquit.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_bio" attid="ZkDQYlIkZUa0l7hW">Biología</h3><input name="data.attributes.pha_bio.value" value="{{data.attributes.pha_bio.value}}" type="text" class="input-ahalf  pha_bio" attid="ZkDQYlIkZUa0l7hW"><input type="text" class="input-bhalf input-disabled inputGM pha_bio.max" name="data.attributes.pha_bio.max" value="{{data.attributes.pha_bio.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_busLib" attid="nmJhV7lZpyRxX7Ca">Buscar Libros</h3><input name="data.attributes.pha_busLib.value" value="{{data.attributes.pha_busLib.value}}" type="text" class="input-ahalf  pha_busLib" attid="nmJhV7lZpyRxX7Ca"><input type="text" class="input-bhalf input-disabled inputGM pha_busLib.max" name="data.attributes.pha_busLib.max" value="{{data.attributes.pha_busLib.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_cienOc" attid="cEcLUd21Roo4SBJS">Ciencias Ocultas</h3><input name="data.attributes.pha_cienOc.value" value="{{data.attributes.pha_cienOc.value}}" type="text" class="input-ahalf  pha_cienOc" attid="cEcLUd21Roo4SBJS"><input type="text" class="input-bhalf input-disabled inputGM pha_cienOc.max" name="data.attributes.pha_cienOc.max" value="{{data.attributes.pha_cienOc.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_cont" attid="K8XREKeDmzKBPnQy">Contabilidad</h3><input name="data.attributes.pha_cont.value" value="{{data.attributes.pha_cont.value}}" type="text" class="input-ahalf  pha_cont" attid="K8XREKeDmzKBPnQy"><input type="text" class="input-bhalf input-disabled inputGM pha_cont.max" name="data.attributes.pha_cont.max" value="{{data.attributes.pha_cont.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_cripto" attid="KRh2bNSvn87mFIDI">Criptografía</h3><input name="data.attributes.pha_cripto.value" value="{{data.attributes.pha_cripto.value}}" type="text" class="input-ahalf  pha_cripto" attid="KRh2bNSvn87mFIDI"><input type="text" class="input-bhalf input-disabled inputGM pha_cripto.max" name="data.attributes.pha_cripto.max" value="{{data.attributes.pha_cripto.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_dere" attid="rQuIEvqIj0liNqu5">Derecho</h3><input name="data.attributes.pha_dere.value" value="{{data.attributes.pha_dere.value}}" type="text" class="input-ahalf  pha_dere" attid="rQuIEvqIj0liNqu5"><input type="text" class="input-bhalf input-disabled inputGM pha_dere.max" name="data.attributes.pha_dere.max" value="{{data.attributes.pha_dere.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_fisica" attid="Reqwy3Xh8GhuLMXp">Física</h3><input name="data.attributes.pha_fisica.value" value="{{data.attributes.pha_fisica.value}}" type="text" class="input-ahalf  pha_fisica" attid="Reqwy3Xh8GhuLMXp"><input type="text" class="input-bhalf input-disabled inputGM pha_fisica.max" name="data.attributes.pha_fisica.max" value="{{data.attributes.pha_fisica.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_geol" attid="KUuPVOX25TY6Zsb4">Geología</h3><input name="data.attributes.pha_geol.value" value="{{data.attributes.pha_geol.value}}" type="text" class="input-ahalf  pha_geol" attid="KUuPVOX25TY6Zsb4"><input type="text" class="input-bhalf input-disabled inputGM pha_geol.max" name="data.attributes.pha_geol.max" value="{{data.attributes.pha_geol.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_hist" attid="nt4okM0843QFVi3O">Historia</h3><input name="data.attributes.pha_hist.value" value="{{data.attributes.pha_hist.value}}" type="text" class="input-ahalf  pha_hist" attid="nt4okM0843QFVi3O"><input type="text" class="input-bhalf input-disabled inputGM pha_hist.max" name="data.attributes.pha_hist.max" value="{{data.attributes.pha_hist.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_histArt" attid="m3uVD9E97LXdLuxy">Historia del Arte</h3><input name="data.attributes.pha_histArt.value" value="{{data.attributes.pha_histArt.value}}" type="text" class="input-ahalf  pha_histArt" attid="m3uVD9E97LXdLuxy"><input type="text" class="input-bhalf input-disabled inputGM pha_histArt.max" name="data.attributes.pha_histArt.max" value="{{data.attributes.pha_histArt.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_idio" attid="V2EmLUpnAAgOi9Di">Idiomas</h3><input name="data.attributes.pha_idio.value" value="{{data.attributes.pha_idio.value}}" type="text" class="input-ahalf  pha_idio" attid="V2EmLUpnAAgOi9Di"><input type="text" class="input-bhalf input-disabled inputGM pha_idio.max" name="data.attributes.pha_idio.max" value="{{data.attributes.pha_idio.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_med" attid="s8mkWpyqzEfLIJ2h">Medicina</h3><input name="data.attributes.pha_med.value" value="{{data.attributes.pha_med.value}}" type="text" class="input-ahalf  pha_med" attid="s8mkWpyqzEfLIJ2h"><input type="text" class="input-bhalf input-disabled inputGM pha_med.max" name="data.attributes.pha_med.max" value="{{data.attributes.pha_med.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_mitos" attid="ROdvwxo8RGSafQkM">Mitos de Cthulhu</h3><input name="data.attributes.pha_mitos.value" value="{{data.attributes.pha_mitos.value}}" type="text" class="input-ahalf  pha_mitos" attid="ROdvwxo8RGSafQkM"><input type="text" class="input-bhalf input-disabled inputGM pha_mitos.max" name="data.attributes.pha_mitos.max" value="{{data.attributes.pha_mitos.max}}"></div><div class="flexblock-center"><h3 class=" label-free" id="pha_teo" attid="SLecg0JJEtPc9BVw">Teología</h3><input name="data.attributes.pha_teo.value" value="{{data.attributes.pha_teo.value}}" type="text" class="input-ahalf  pha_teo" attid="SLecg0JJEtPc9BVw"><input type="text" class="input-bhalf input-disabled inputGM pha_teo.max" name="data.attributes.pha_teo.max" value="{{data.attributes.pha_teo.max}}"></div></div></div><div class="col-1-3"><div class="panelheader">Habilidades Interpersonales</div><div class="new-row"><div class="flexblock-left"><h3 class=" label-free" id="phi_adul" attid="9FwzHCyCrwN2CJYf">Adulación</h3><input name="data.attributes.phi_adul.value" value="{{data.attributes.phi_adul.value}}" type="text" class="input-ahalf  phi_adul" attid="9FwzHCyCrwN2CJYf"><input type="text" class="input-bhalf input-disabled inputGM phi_adul.max" name="data.attributes.phi_adul.max" value="{{data.attributes.phi_adul.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="phi_bajoF" attid="s07jZvUpvpEh6YtY">Bajos Fondos</h3><input name="data.attributes.phi_bajoF.value" value="{{data.attributes.phi_bajoF.value}}" type="text" class="input-ahalf  phi_bajoF" attid="s07jZvUpvpEh6YtY"><input type="text" class="input-bhalf input-disabled inputGM phi_bajoF.max" name="data.attributes.phi_bajoF.max" value="{{data.attributes.phi_bajoF.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="phi_buro" attid="mrIQ2VUg2kgBuHNX">Burocracia</h3><input name="data.attributes.phi_buro.value" value="{{data.attributes.phi_buro.value}}" type="text" class="input-ahalf  phi_buro" attid="mrIQ2VUg2kgBuHNX"><input type="text" class="input-bhalf input-disabled inputGM phi_buro.max" name="data.attributes.phi_buro.max" value="{{data.attributes.phi_buro.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="phi_consu" attid="EzahzxEHd5wnG9i2">Consuelo</h3><input name="data.attributes.phi_consu.value" value="{{data.attributes.phi_consu.value}}" type="text" class="input-ahalf  phi_consu" attid="EzahzxEHd5wnG9i2"><input type="text" class="input-bhalf input-disabled inputGM phi_consu.max" name="data.attributes.phi_consu.max" value="{{data.attributes.phi_consu.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="phi_credi" attid="vgxfD4VM95ShkzrI">Crédito</h3><input name="data.attributes.phi_credi.value" value="{{data.attributes.phi_credi.value}}" type="text" class="input-ahalf  phi_credi" attid="vgxfD4VM95ShkzrI"><input type="text" class="input-bhalf input-disabled inputGM phi_credi.max" name="data.attributes.phi_credi.max" value="{{data.attributes.phi_credi.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="phi_evaSin" attid="LROc3oi1bVTicGBS">Evaluar Sinceridad</h3><input name="data.attributes.phi_evaSin.value" value="{{data.attributes.phi_evaSin.value}}" type="text" class="input-ahalf  phi_evaSin" attid="LROc3oi1bVTicGBS"><input type="text" class="input-bhalf input-disabled inputGM phi_evaSin.max" name="data.attributes.phi_evaSin.max" value="{{data.attributes.phi_evaSin.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="phi_histOral" attid="N94iepBS6q5FRw2x">Historia Oral</h3><input name="data.attributes.phi_histOral.value" value="{{data.attributes.phi_histOral.value}}" type="text" class="input-ahalf  phi_histOral" attid="N94iepBS6q5FRw2x"><input type="text" class="input-bhalf input-disabled inputGM phi_histOral.max" name="data.attributes.phi_histOral.max" value="{{data.attributes.phi_histOral.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="phi_interr" attid="kbfr2uEgsZt9gUT0">Interrogatorio</h3><input name="data.attributes.phi_interr.value" value="{{data.attributes.phi_interr.value}}" type="text" class="input-ahalf  phi_interr" attid="kbfr2uEgsZt9gUT0"><input type="text" class="input-bhalf input-disabled inputGM phi_interr.max" name="data.attributes.phi_interr.max" value="{{data.attributes.phi_interr.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="phi_intimi" attid="fNoO59UX90WkyI9s">Intimidación</h3><input name="data.attributes.phi_intimi.value" value="{{data.attributes.phi_intimi.value}}" type="text" class="input-ahalf  phi_intimi" attid="fNoO59UX90WkyI9s"><input type="text" class="input-bhalf input-disabled inputGM phi_intimi.max" name="data.attributes.phi_intimi.max" value="{{data.attributes.phi_intimi.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="phi_jergaP" attid="AWH3Lk6j9o7Gzqbv">Jerga Policial</h3><input name="data.attributes.phi_jergaP.value" value="{{data.attributes.phi_jergaP.value}}" type="text" class="input-ahalf  phi_jergaP" attid="AWH3Lk6j9o7Gzqbv"><input type="text" class="input-bhalf input-disabled inputGM phi_jergaP.max" name="data.attributes.phi_jergaP.max" value="{{data.attributes.phi_jergaP.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="phi_rega" attid="q69CNK2apV7EWmWm">Regatear</h3><input name="data.attributes.phi_rega.value" value="{{data.attributes.phi_rega.value}}" type="text" class="input-ahalf  phi_rega" attid="q69CNK2apV7EWmWm"><input type="text" class="input-bhalf input-disabled inputGM phi_rega.max" name="data.attributes.phi_rega.max" value="{{data.attributes.phi_rega.max}}"></div></div></div><div class="col-1-3"><div class="panelheader">Habilidades Técnicas</div><div class="new-row"><div class="flexblock-left"><h3 class=" label-free" id="pht_astro" attid="B4TBO5ZvvEDOckWY">Astronomía</h3><input name="data.attributes.pht_astro.value" value="{{data.attributes.pht_astro.value}}" type="text" class="input-ahalf  pht_astro" attid="B4TBO5ZvvEDOckWY"><input type="text" class="input-bhalf input-disabled inputGM pht_astro.max" name="data.attributes.pht_astro.max" value="{{data.attributes.pht_astro.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="pht_cerra" attid="vOovK3CbpypOGKxD">Cerrajería</h3><input name="data.attributes.pht_cerra.value" value="{{data.attributes.pht_cerra.value}}" type="text" class="input-ahalf  pht_cerra" attid="vOovK3CbpypOGKxD"><input type="text" class="input-bhalf input-disabled inputGM pht_cerra.max" name="data.attributes.pht_cerra.max" value="{{data.attributes.pht_cerra.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="pht_farma" attid="nJ4zbd6gvPIhhK4z">Farmacología</h3><input name="data.attributes.pht_farma.value" value="{{data.attributes.pht_farma.value}}" type="text" class="input-ahalf  pht_farma" attid="nJ4zbd6gvPIhhK4z"><input type="text" class="input-bhalf input-disabled inputGM pht_farma.max" name="data.attributes.pht_farma.max" value="{{data.attributes.pht_farma.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="pht_foto" attid="E3A2DqrAWs1HzLVv">Fotografía</h3><input name="data.attributes.pht_foto.value" value="{{data.attributes.pht_foto.value}}" type="text" class="input-ahalf  pht_foto" attid="E3A2DqrAWs1HzLVv"><input type="text" class="input-bhalf input-disabled inputGM pht_foto.max" name="data.attributes.pht_foto.max" value="{{data.attributes.pht_foto.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="pht_artesa" attid="bGCjsPjRXynozIBu">Hab. Astrología</h3><input name="data.attributes.pht_artesa.value" value="{{data.attributes.pht_artesa.value}}" type="text" class="input-ahalf  pht_artesa" attid="bGCjsPjRXynozIBu"><input type="text" class="input-bhalf input-disabled inputGM pht_artesa.max" name="data.attributes.pht_artesa.max" value="{{data.attributes.pht_artesa.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="pht_artist" attid="OVonk4B8SQp7cVJP">Hab. Artística</h3><input name="data.attributes.pht_artist.value" value="{{data.attributes.pht_artist.value}}" type="text" class="input-ahalf  pht_artist" attid="OVonk4B8SQp7cVJP"><input type="text" class="input-bhalf input-disabled inputGM pht_artist.max" name="data.attributes.pht_artist.max" value="{{data.attributes.pht_artist.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="pht_medFor" attid="2dOORrhKDRgx5EXY">Medicina Forense</h3><input name="data.attributes.pht_medFor.value" value="{{data.attributes.pht_medFor.value}}" type="text" class="input-ahalf  pht_medFor" attid="2dOORrhKDRgx5EXY"><input type="text" class="input-bhalf input-disabled inputGM pht_medFor.max" name="data.attributes.pht_medFor.max" value="{{data.attributes.pht_medFor.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="pht_quim" attid="6zG1uO5Q90NniWf4">Química</h3><input name="data.attributes.pht_quim.value" value="{{data.attributes.pht_quim.value}}" type="text" class="input-ahalf  pht_quim" attid="6zG1uO5Q90NniWf4"><input type="text" class="input-bhalf input-disabled inputGM pht_quim.max" name="data.attributes.pht_quim.max" value="{{data.attributes.pht_quim.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="pht_recPrue" attid="rJHpc39rYTagg284">Recogida Pruebas</h3><input name="data.attributes.pht_recPrue.value" value="{{data.attributes.pht_recPrue.value}}" type="text" class="input-ahalf  pht_recPrue" attid="rJHpc39rYTagg284"><input type="text" class="input-bhalf input-disabled inputGM pht_recPrue.max" name="data.attributes.pht_recPrue.max" value="{{data.attributes.pht_recPrue.max}}"></div><div class="flexblock-left"><h3 class=" label-free" id="pht_superv" attid="bKBm2XMTUEtmcUJi">Superviivencia</h3><input name="data.attributes.pht_superv.value" value="{{data.attributes.pht_superv.value}}" type="text" class="input-ahalf  pht_superv" attid="bKBm2XMTUEtmcUJi"><input type="text" class="input-bhalf input-disabled inputGM pht_superv.max" name="data.attributes.pht_superv.max" value="{{data.attributes.pht_superv.max}}"></div></div></div></div></div></div><div class="tab scrollable tab_HABILIDADES_2_tab" id="tab_HABILIDADES_2_Def" data-group="primary" data-tab="tab_HABILIDADES_2"><div class="new-column" id="tab_HABILIDADES_2Body"><div class="new-block" id="tab_HABILIDADES_2row1"><div class="col-1-1"><div class="panelheader">HABILIDADES</div><div class="table-row"><div class="flexblock-left"><table class="table-free tabla_habilidad" name="data.attributes.tabla_habilidad" value="{{data.attributes.tabla_habilidad.value}}" attid="lDk8qlRfBgDhxh0a"><thead style="display: none;"><tr><th class="input-free">Item</th><th class="input-min">Active</th><th class="input-med">Uses</th><th class="input-med">check</th><th class="input-min">propiedad prueba</th><th class="cell-empty"></th></tr></thead><tbody class="table" id="lDk8qlRfBgDhxh0a"></tbody></table></div></div></div></div></div></div></section>
+</form>

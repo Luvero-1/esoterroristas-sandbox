@@ -11,7 +11,7 @@
 {"name":"De habilidades generales","type":"Item","sort":3800000,"flags":{},"parent":"YrMQ7D9ZzcCnmNvs","sorting":"a","color":"","_id":"ZeJyRknIgmv3la1t"}
 {"name":"De Informacion basica","type":"Item","sort":3600000,"flags":{},"parent":"z4r0HpgNINOKMsg8","sorting":"a","color":"","_id":"cQC3jFexYER8gihE"}
 {"_id":"dzwUkWXBOiauUdBe","name":"Config plantilla Esoterroristas (NO TOCAR)","type":"Item","sort":100000,"flags":{},"parent":null,"sorting":"a","color":""}
-{"name":"5 - cItems","type":"Item","sort":3300000,"flags":{},"parent":"dzwUkWXBOiauUdBe","sorting":"a","color":"","_id":"hIvBcf0CoNlCW5TN"}
+{"_id":"hIvBcf0CoNlCW5TN","name":"cItems","type":"Item","parent":null,"sorting":"a","sort":200000,"color":"","flags":{}}
 {"name":"De Habilidades","type":"Item","sort":3700000,"flags":{},"parent":"z4r0HpgNINOKMsg8","sorting":"a","color":"","_id":"jjwPWlPJjAsG6syM"}
 {"name":"De Combate","type":"Item","sort":4400000,"flags":{},"parent":"z4r0HpgNINOKMsg8","sorting":"a","color":"","_id":"mFbzD8lKGjhHxPY2"}
 {"_id":"mL2k2JAWzHU6cDTg","name":"De cItems de combate","type":"Item","sort":4500000,"flags":{},"parent":"YrMQ7D9ZzcCnmNvs","sorting":"a","color":""}

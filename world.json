@@ -26,9 +26,9 @@
   "download": "https://codeload.github.com/Luvero-1/esoterroristas-sandbox/zip/main",
   "protected": false,
   "background": "worlds/esoterroristas-sandbox/maxresdefault.jpg",
-  "coreVersion": "0.8.9",
+  "coreVersion": "9.238",
   "nextSession": null,
   "resetKeys": false,
   "safeMode": false,
-  "systemVersion": "0.10.1"
+  "systemVersion": "0.11.0"
 }
