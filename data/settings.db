@@ -1,7 +1,7 @@
 {"key":"sandbox.consistencycheck","value":"false","_id":"48PmtPFcL2cvHGLM"}
 {"key":"dice-so-nice.formatVersion","value":"\"4.1\"","_id":"8jmX7cURIa79pjCy"}
 {"_id":"CAlVzN2oxEZPHXmO","key":"core.compendiumConfiguration","value":"{\"world.test\":{\"private\":true,\"locked\":false},\"world.armas\":{\"private\":false,\"locked\":true},\"world.protecciones\":{\"private\":false,\"locked\":true}}"}
-{"_id":"QUa9OxYofOl3ZjT6","key":"core.moduleConfiguration","value":"{\"dice-calculator\":true}"}
+{"_id":"QUa9OxYofOl3ZjT6","key":"core.moduleConfiguration","value":"{\"dice-calculator\":true,\"dice-so-nice\":true}"}
 {"_id":"T1PDsIqQPR29V3UW","key":"core.permissions","value":"{\"BROADCAST_AUDIO\":[2,3,4],\"BROADCAST_VIDEO\":[2,3,4],\"ACTOR_CREATE\":[3,4],\"DRAWING_CREATE\":[2,3,4],\"ITEM_CREATE\":[3,4],\"FILES_BROWSE\":[2,3,4],\"FILES_UPLOAD\":[3,4],\"JOURNAL_CREATE\":[2,3,4],\"MACRO_SCRIPT\":[1,2,3,4],\"MESSAGE_WHISPER\":[1,2,3,4],\"SETTINGS_MODIFY\":[3,4],\"SHOW_CURSOR\":[1,2,3,4],\"SHOW_RULER\":[1,2,3,4],\"TEMPLATE_CREATE\":[1,2,3,4],\"TOKEN_CREATE\":[3,4],\"TOKEN_CONFIGURE\":[2,3,4],\"WALL_DOORS\":[1,2,3,4],\"NOTE_CREATE\":[2,3,4]}"}
 {"_id":"T9HLUuRFrkPWR2rW","key":"sandbox.diff","value":"\"4\""}
 {"key":"core.time","value":"0","_id":"UIxOclpUvxPg8XZc"}

@@ -1,7 +1,7 @@
 {
   "name": "esoterroristas-sandbox",
   "title": "Esoterroristas 2ºed para Sandbox",
-  "description": "<div style=\"text-align: center;\" data-css=\"tve-u-171dca46144\"><em>Sois la &uacute;ltima l&iacute;nea de defensa de nuestro mundo, un equipo de &eacute;lite que investiga y combate las conspiraciones esoterroristas que pretenden desgarrar el tejido de la realidad y dejar entrar a los monstruos que existen m&aacute;s all&aacute; del velo.</em></div>\n<div style=\"text-align: center;\" data-css=\"tve-u-171dca46144\">&nbsp;</div>\n<div style=\"text-align: center;\" data-css=\"tve-u-171dca46144\"><em>Llevas una doble vida. La mayor&iacute;a de las veces, eres una persona corriente que paga su alquiler y llevas una vida de lo m&aacute;s normal. Sin embargo, perteneces a la organizaci&oacute;n mundial secreta llamada Ordo Veritatis. Esta conspiraci&oacute;n ben&eacute;vola, que opera con la aprobaci&oacute;n t&aacute;cita de las principales potencias mundiales, lucha contra las maquinaciones de los esoterroristas, quienes buscan conseguir poder provocando fen&oacute;menos paranormales malignos.</em></div>",
+  "description": "<div style=\"text-align:center\" data-css=\"tve-u-171dca46144\"><em>Sois la última línea de defensa de nuestro mundo, un equipo de élite que investiga y combate las conspiraciones esoterroristas que pretenden desgarrar el tejido de la realidad y dejar entrar a los monstruos que existen más allá del velo.</em></div>\n<div style=\"text-align:center\" data-css=\"tve-u-171dca46144\"> </div>\n<div style=\"text-align:center\" data-css=\"tve-u-171dca46144\"><em>Llevas una doble vida. La mayoría de las veces, eres una persona corriente que paga su alquiler y llevas una vida de lo más normal. Sin embargo, perteneces a la organización mundial secreta llamada Ordo Veritatis. Esta conspiración benévola, que opera con la aprobación tácita de las principales potencias mundiales, lucha contra las maquinaciones de los esoterroristas, quienes buscan conseguir poder provocando fenómenos paranormales malignos.</em></div>",
   "author": "Luvero",
   "authors": [
     {
@@ -26,9 +26,8 @@
   "download": "https://codeload.github.com/Luvero-1/esoterroristas-sandbox/zip/main",
   "protected": false,
   "background": "worlds/esoterroristas-sandbox/maxresdefault.jpg",
-  "coreVersion": "9.238",
-  "nextSession": null,
+  "coreVersion": "9.242",
   "resetKeys": false,
   "safeMode": false,
-  "systemVersion": "0.11.0"
+  "systemVersion": "0.12.1"
 }
